@@ -1,0 +1,651 @@
+/* 00. font - 구글폰트에서 Montserrat 300/400/600 가져옴 */
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Noto+Sans+KR&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600&display=swap");
+
+/* 00. Reset */
+* {margin: 0;padding: 0; box-sizing: border-box;}
+html, body, div, span, applet, object, iframe, h1, h2, h3, h4, h5, h6, p, blockquote, pre, a, abbr, acronym, address, big, cite, code, del, dfn, em, font, img, ins, kbd, q, s, samp, small, strike, strong, sub, sup, tt, var, b, u, i, center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, tbody, tfoot, thead, tr, th, td{margin:0;padding:0;}
+a {color: inherit; text-decoration: inherit; display: inline-block;}
+li {list-style: none;}
+address, em, i {font-style: normal;}
+button {background: none; border: none;}
+img {vertical-align: middle;}
+i{display: block;}
+/* =============== BASE ============== */
+body{
+  font-family: "Raleway", sans-serif;
+  font-size: 16px;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+}
+.wrap{
+  background-color: #141212;
+  color: #fff;
+}
+
+/* =============== COMMON STYLE =============== */
+section{
+  padding-bottom: 150px;
+}
+.inner{
+  padding: 0 50px;
+}
+.box{
+  border-radius: 20px;
+  overflow: hidden;
+}
+.btn{
+  background-color: #fff;
+  color: #000;
+  font-size: 14px;
+  text-transform: uppercase;
+  padding: 0.5em 1em;
+  border-radius: 40px;
+  margin-top: 30px;
+}
+.title{
+  font-size: 120px;
+  text-transform: uppercase;
+  line-height: 1;
+  letter-spacing: -0.5px;
+  overflow: hidden;
+}
+.title i{
+  display: block;
+}
+/* =============== header =============== */
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999;
+}
+header .inner{
+  padding-top: 30px;
+  position: relative;
+}
+.logo{
+  width: 150px;
+  & a{
+    display: flex;
+    & span{
+      padding: 0 1px;
+      & img{
+        width: 100%;
+      }
+    }
+  }
+}
+.gnb{
+  position: absolute;
+  top: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 99%;
+  text-align: center;
+}
+.menuOpen{
+  color: #fff;
+  padding: 30px 0;
+  font-size: 13px;
+  position: relative;
+  cursor: pointer;
+}
+.menuOpen:after{
+  content: '';
+  width: 150px;
+  height: 4px;
+  border-radius: 30px;
+  background-color: #fff;
+  position: absolute;
+  top: 10px;
+  left: 50%;
+  transform: translateX(-50%);
+  transition: 0.5s;
+}
+.menuOpen:hover:after{
+  width: 180px;
+}
+.menu{
+  position: absolute;
+  top: -10px;
+  left: 0;
+  width: 100%;
+  padding: 130px 0 30px;
+  transform: translateY(-150%);
+  background-color: rgba(55, 55, 55, 0.4);
+  z-index: -1;
+  transition: 1s;
+  & li{
+    overflow: hidden;
+    & a{
+      font-size: 2.5rem;
+      transform: translateY(-100%);
+      transition: 1.5s;
+    }
+  }
+}
+.menu.active{
+  transform: translateY(0);
+  & a{
+    transform: translateY(0);
+  }
+  & li:nth-child(2) a{
+    transition-delay: 0.05s;
+  }
+  & li:nth-child(3) a{
+    transition-delay: 0.1s;
+  }
+  & li:nth-child(4) a{
+    transition-delay: 0.15s;
+  }
+}
+
+/* =============== VISUAL ============== */
+.visual{
+  height: 100vh;
+  padding: 30px 0;
+}
+.visual .inner{
+  height: 100%;
+  display: grid;
+  grid-template-rows: auto 1fr auto;
+}
+.visual .mainText{
+  justify-self: flex-end;
+  font-weight: normal;
+}
+.visual .mainText span{
+  font-size: 80px;
+  display: block;
+  line-height: 0.9;
+  letter-spacing: -0.5px;
+  overflow: hidden;
+}
+.visual .subTextBox{
+  font-size: 20px;
+  align-self: flex-end;
+  margin-bottom: 50px;
+  & span{
+    opacity: 0.5;
+  }
+}
+.visual .logoWrap,
+footer .logoWrap{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  & span{
+    width: 16%;
+    & img{
+      width: 100%;
+    }
+  }
+}
+/* =============== con1 ============== */
+.con1 .box{
+  background-color: rgba(55, 55, 55, 0.4);
+  padding: 50px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  row-gap: 100px;
+  backdrop-filter: blur(30px);
+}
+.con1 .mainText{
+  font-size: 30px;
+  font-weight: normal;
+  grid-row-start: 2;
+}
+.con1 .subTextBox{
+  grid-column-start: 2;
+}
+.con1 .subText{
+  font-size: 20px;
+  margin-top: 20px;
+  max-width: 500px;
+}
+.textAni{
+  margin-top: 20px;
+  position: relative;
+}
+.textAni:after{
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  background-color:  #e36840;
+  animation: circle 2s infinite;
+}
+@keyframes circle{
+  0%{
+    opacity: 0;
+  }
+  30%, 80% {opacity: 1;}
+  100%{
+    opacity: 0;
+  }
+}
+.textAni ul{
+  display: grid;
+  max-width: 800px;
+}
+.textAni ul li{
+  grid-column-start: 1;
+  grid-row-start: 1;
+  font-size: 60px;
+  text-transform: uppercase;
+  transform: translateX(30px);
+  opacity: 0;
+}
+/* =============== con2 ============== */
+.con2 .mainTextBox{
+  border-top: 1px solid #3b3b3b;
+  padding: 50px 0;
+  position: relative;
+}
+.con2 .mainTextBox span{
+  display: block;
+  text-align: right;
+}
+.con2 .in{
+  display: flex;
+  justify-content: flex-end;
+  & video{
+    max-width: 500px;
+    margin-right: 20px;
+  }
+  & .title{
+    align-self: flex-end;
+  }
+}
+.con2 .title{
+  text-align: right;
+  &.b{
+    margin-right: 400px;
+  }
+}
+.con2 .subTextBox{
+  display: flex;
+  justify-content: space-between;
+}
+.con2 .subTextBox > div{
+  max-width: 600px;
+}
+.con2 .subText{
+  font-size: 24px;
+  &:first-child{
+    margin-bottom: 20px;
+  }
+}
+.con2 .iconBox{
+  align-self: flex-end;
+  display: flex;
+  & li{
+    width: 28px;
+    margin: 0 10px;
+    &:last-child{
+      width: 36px;
+    }
+  }
+}
+
+/* =============== con3 ============== */
+.con3 .inner{
+  display: flex;
+  justify-content: space-between;
+}
+.con3 .textBox{
+  width: 30%;
+  & h3{
+    font-size: 60px;
+    font-weight: normal;
+    line-height: 1;
+    position: sticky;
+    position: -webkit-sticky;
+    top: 50%;
+  }
+}
+.con3 .listBox{
+  width: 70%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  row-gap: 50px;
+  perspective: 900px;
+}
+.con3 .listBox li{
+  width: 32%;
+}
+.con3 .listBox li[data-color=a] .listImg{
+  background-color: tomato;
+}
+.con3 .listBox li[data-color=b] .listImg{
+  background-color: skyblue;
+}
+.con3 .listBox li[data-color=c] .listImg{
+  background-color: yellowgreen;
+}
+.con3 .listBox li[data-color=d] .listImg{
+  background-color: violet;
+}
+.con3 .listBox li[data-color=e] .listImg{
+  background-color: orange;
+}
+.con3 .listBox .listImg{
+  width: 100%;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  & img{
+    width: 40%;
+  }
+}
+.con3 .listBox li h4{
+  display: flex;
+  justify-content: space-between;
+  margin-top: 10px;
+  & .year{
+    opacity: 0.5;
+  }
+}
+/* =============== con4 ============== */
+.con4 .mainTextBox{
+  position: relative;
+}
+.con4 .mainTextBox span{
+  position: absolute;
+  top: 0;
+  right: 0;
+}
+.con4 .mainTextBox .title.b{
+  text-align: center;
+}
+.con4 .mainTextBox .in{
+  display: flex;
+  justify-content: right;
+}
+.con4 .mainTextBox video{
+  max-width: 550px;
+}
+.con4 .listBox{
+  margin: 100px 0;
+  perspective: 900px;
+}
+.con4 .listBox .box{
+  background-color: #fff;
+  color: #141212;
+  padding: 50px 80px;
+  display: grid;
+  grid-template-columns: 60% auto;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 10%;
+  filter: brightness(1);
+  /* transition: 0.5s; 트랜지션때문에 효과적용 안되는거처럼 보임 */
+  & .mainText{
+    font-size: 40px;
+    font-weight: normal;
+    line-height: 2em;
+    margin-bottom: 100px;
+    grid-column: 1 / -1;
+    border-bottom: 1px solid #ddd;
+  }
+  & .num{
+    font-size: 250px;
+    line-height: 0.9;
+    font-weight: bold;
+    align-self: flex-end;
+  }
+  & .textBox{
+    font-size: 16px;
+    align-self: flex-end;
+    & p:last-child{
+      opacity: 0.5;
+      margin-top: 30px;
+    }
+  }
+}
+.con4 .listBox .box:not(:last-child){
+  margin-bottom: 50px;
+}
+.con4 .listBox .box.a .num{
+  color: orange;
+}
+.con4 .listBox .box.b .num{
+  color: green;
+}
+.con4 .listBox .box.c .num{
+  color: dodgerblue;
+}
+.con4 .subTextBox{
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+}
+.con4 .subText{
+  font-size: 20px;
+  max-width: 550px;
+  grid-column-start: 2;
+  margin-bottom: 30px;
+}
+/* =============== con5 ============== */
+.con5{
+  background-color: #fff;
+  color: #000;
+  padding-bottom: 0;
+}
+.con5 .inner{
+  padding: 50px;
+}
+.con5 .mainTextBox{
+  margin-bottom: 150px;
+}
+.con5 .mainTextBox h3{
+  font-size: 100px;
+  font-weight: normal;
+  line-height: 1;
+  letter-spacing: -5px;
+}
+.con5 .listBox{
+  border-top: 1px solid #141212;
+}
+.con5 .listBox li{
+  display: grid;
+  grid-template-columns: 2fr 1fr auto;
+  align-items: center;
+  border-bottom: 1px solid #141212;
+  padding: 10px 0;
+  & p{
+    font-size: 40px;
+  }
+}
+.con5 .imgBox{
+  width: 350px;
+  transform: scale(0);
+  opacity: 0;
+  position: absolute;
+  z-index: 1000;
+}
+.con5 .imgBox img{
+  width: 100%;
+}
+/* =============== footer ============== */
+footer{
+  position: relative;
+  overflow: hidden;
+}
+footer .inner{
+  padding: 70px;
+  height: 100vh;
+}
+footer .box{
+  height: 100%;
+  background-color: rgba(55, 55, 55, 0.4);
+  backdrop-filter: blur(30px);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+  position: relative;
+  z-index: 100;
+}
+footer .box .mainText{
+  font-size: 130px;
+  font-weight: normal;
+  text-transform: uppercase;
+  padding: 50px 0;
+}
+footer .box .subTextBox{
+  & span{
+    display: block;
+    opacity: 0.5;
+  }
+}
+footer .btnBox{
+  display: grid;
+  place-items: center;
+  flex-grow: 1;
+}
+.recordBtn{
+  display: block;
+  width: 95px;
+  height: 95px;
+  border-radius: 50%;
+  box-shadow: 0 0 0 10px #000, 0 0 30px rgba(255, 255, 255, 0.4);
+  position: relative;
+  cursor: pointer;
+}
+.recordBtn span{
+  display: block;
+  width: 93%;
+  height: 93%;
+  border-radius: 50%;
+  background-color: #e36840;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  transition: 0.5s;
+}
+.recordBtn:hover span{
+  width: 100%;
+  height: 100%;
+}
+.contactBox{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-top: 1px solid rgba(255, 255, 255, 0.2);
+}
+.contactBox li{
+  margin: 20px;
+}
+.contactBox li a{
+  font-size: 12px;
+  opacity: 0.5;
+  text-transform: uppercase;
+  padding: 10px;
+}
+.copyright{
+  text-align: center;
+  padding-top: 20px;
+}
+footer .logoWrap{
+  position: absolute;
+  top: -50%;
+  left: 0;
+}
+
+/* ============= loading ============= */
+.loading{
+  width: 100%;
+  height: 100vh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: #000;
+  z-index: 9999;
+  display: none;
+}
+.loading.loadAni1{
+  display: grid;
+  place-items: center;
+}
+.loading .logoWrap{
+  width: 200px;
+  display: flex;
+  justify-content: space-between;
+  gap: 1px;
+  overflow: hidden;
+} 
+.loading .logoWrap span{
+  display: block;
+  width: 16%;
+  & img{
+    width: 100%;
+  }
+}
+.loading.loadAni1 .logoWrap span{
+  animation: up 0.5s linear;
+}
+@keyframes up{
+  0%{
+    transform: translateY(100%);
+  }
+  100%{
+    transform: translateY(0);
+  }
+}
+.loading.loadAni2 .logoWrap span{
+  opacity: 0;
+}
+.loading.loadAni2 .logoWrap span:nth-child(1){
+  transition: 0.5s;
+}
+.loading.loadAni2 .logoWrap span:nth-child(2){
+  transition: 0.8s;
+}
+.loading.loadAni2 .logoWrap span:nth-child(3){
+  transition: 1s;
+}
+.loading.loadAni2 .logoWrap span:nth-child(4){
+  transition: 1.2s;
+}
+.loading.loadAni2 .logoWrap span:nth-child(5){
+  transition: 1.3s;
+}
+.loading.loadAni2 .logoWrap span:nth-child(6){
+  transition: 1.4s;
+}
+/* loading 후 애니메이션 */
+.rotate.active{
+  animation: rotate 1s forwards;
+}
+@keyframes rotate{
+  0%{
+    transform: rotate(30deg) translate(0, 100%);
+    transform-origin: 0 0;
+  }
+  100%{
+    transform: rotate(0) translate(0, 0);
+    transform-origin: 0 0;
+  }
+}
+.opacity{
+  opacity: 0;
+}
+.opacity.active{
+  animation: opacity 1s forwards;
+}
+@keyframes opacity{
+  0%{
+    opacity: 0;
+  }
+  100%{
+    opacity: 1;
+  }
+}
