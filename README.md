@@ -56,12 +56,14 @@ gsap.timeline({
 ❗️&nbsp;  scrub : 스크롤 연동방식 설정으로 값은 true나 숫자(1 ~ 3)<br>
 &nbsp; &nbsp; true는 바로 실행되어 비교적 자연스럽지가 않고, 숫자는 값이 클수록 더 부드럽고 자연스럽게 실행된다<br><br>
 
-<br><br<br>
+<br><br><br>
+<hr>
 
 ### 2. 텍스트 change animation
 
-<img width="700" alt="image" src="https://github.com/user-attachments/assets/d4b4ca38-13bb-45cb-9f09-73dacc24d0a2" />
 
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/d4b4ca38-13bb-45cb-9f09-73dacc24d0a2" />
+<br>
 
 [ CSS ]
 ```css
@@ -97,9 +99,10 @@ gsap.timeline({
     })
   }
 ```
+<br>
 
 1️⃣ &nbsp; 각 텍스트 요소 모두 grid-column-start, grid-row-start 값을 1로 주어 같은 위치에 위치시키고, opacity 0으로 보이지 않도록 설정한다 <br><br>
-2️⃣ &nbsp; 무한반복하는 타임라인을 textAni 변수에 할당한다<br><br>
+2️⃣ &nbsp; 무한반복하는 타임라인을 textAni 변수에 할당한다<br>
 ❗️ &nbsp; repeat: '최초 실행(1회) 이후' 반복되어야 하는 횟수를 지정<br>
 &nbsp;&nbsp; 값은 정수여야 하고, -1이면 무한반복<br><br>
 3️⃣ &nbsp; 반복문으로 각 텍스트 요소가 차례로 나타나도록 애니메이션을 설정한다<br><br>
@@ -109,10 +112,12 @@ gsap.timeline({
 &nbsp;&nbsp; repeat만 사용하면 한 방향으로만, yoyo를 같이 사용하면 왔다 갔다 동작이 가능<br>
 
 <br><br><br>
+<hr>
 
 ### 3. 카드 애니메이션
 
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/c41f1092-beed-45ce-acc9-7cf1d19822e6" />
+<br>
 
 ```css
 .con3 .textBox h3{
@@ -166,9 +171,12 @@ gsap.timeline({
 3️⃣ &nbsp; 각 요소의 인덱스를 활용해 애니메이션 딜레이를 준다<br><br>
 
 <br><br><br>
+<hr>
 
-### 4. 박스 포개어지기? 
+### 4. 박스 flip 효과
+
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/d0f94699-9400-4f63-9796-fda7159ae2f8" />
+<br>
 
 ```css
 .con4 .listBox{
@@ -204,41 +212,21 @@ gsap.timeline({
 ```
 <br>
 
-1️⃣ &nbsp; sticky로 각 박스를 특정 위치에서 고정시키도록 설정하고, 부모요소에 perspective 값 설정
-2️⃣ &nbsp; 유틸리티 함수, 반복문 사용으로 각 박스에 접근하여 박스의 top이 뷰포트 20%지점에 도달하면 크기, 원근감, 밝기가 변하도록 설정
+1️⃣ &nbsp; sticky로 각 박스를 특정 위치에서 고정시키도록 설정하고, 부모요소에 perspective 값 설정 <br><br>
+2️⃣ &nbsp; 유틸리티 함수, 반복문 사용으로 각 박스에 접근하여 박스의 top이 뷰포트 20%지점에 도달하면 크기, 원근감, 밝기가 변하도록 설정<br><br>
 
 <br><br><br>
+<hr>
 
 ### 5. 마우스 오버 시 관련 이미지 나타나기
 
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/594bdbfc-30a1-475a-8d43-224963881d3e" />
+<br>
 
 [ HTML ]
 ```html
   <ul class="listBox">
-    <li>
-      <p>Deabang</p>
-      <span>Undustry</span>
-      <span>2024</span>
-    </li>
-    <li>
-      . . .
-    </li>
-    <li>
-      . . .
-    </li>
-    <li>
-      . . .
-    </li>
-    <li>
-      . . .
-    </li>
-    <li>
-      . . .
-    </li>
-    <li>
-      . . .
-    </li>
+    . . .
   </ul>
   <div class="imgBox box">
     <img src="images/img0.jpg" alt="">
@@ -295,5 +283,12 @@ gsap.timeline({
 ❗️&nbsp;  pageX/Y는 스크롤을 포함한 문서 전체를 기준으로 한 위치<br><br>
 5️⃣ &nbsp; mouseout일때는 다시 imgBox가 사라지는 애니메이션을 설정한다<br><br>
 
+<br><br><br>
 
+## 📌 &nbsp; 회고 및 배운 점 정리
+
+1️⃣     타임라인
+2️⃣    유틸리티 함수로 gsap을 좀 더 폭넓게 사용할 수 있다는 점
+3️⃣    grid-column-start, grid-row-start 활용으로 같은 지점에 위치 시키기, 
+마우스 위치 관련 속성 pageX/Y로 다른 요소 위치 부여하기
 
