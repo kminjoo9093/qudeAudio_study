@@ -110,7 +110,7 @@ gsap.timeline({
 
 <br><br><br>
 
-## 3. 카드 애니메이션
+### 3. 카드 애니메이션
 
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/c41f1092-beed-45ce-acc9-7cf1d19822e6" />
 
@@ -165,8 +165,135 @@ gsap.timeline({
 복잡한 시간 제어나 반복이 필요하지 않기 때문 <br><br>
 3️⃣ &nbsp; 각 요소의 인덱스를 활용해 애니메이션 딜레이를 준다<br><br>
 
+<br><br><br>
 
+### 4. 박스 포개어지기? 
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/d0f94699-9400-4f63-9796-fda7159ae2f8" />
 
+```css
+.con4 .listBox{
+  margin: 100px 0;
+  perspective: 900px;
+}
+.con4 .listBox .box{
+    . . .
+  position: sticky;
+  position: -webkit-sticky;
+  top: 10%;
+  filter: brightness(1);
+}
+```
+
+```js
+  //con4 listBox
+  gsap.utils.toArray('.con4 .listBox .box').forEach((selector)=>{
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: selector,
+        start: '0% 20%',
+        end: '0% 0%',
+        scrub: 1,
+      }
+    })
+    .to(selector, {
+      transform: "scale(0.9) rotateX(-10deg)", 
+      transformOrign: "top",
+      filter: "brightness(0.5)", 
+    }, 0)
+  })
+```
+<br>
+
+1️⃣ &nbsp; sticky로 각 박스를 특정 위치에서 고정시키도록 설정하고, 부모요소에 perspective 값 설정
+2️⃣ &nbsp; 유틸리티 함수, 반복문 사용으로 각 박스에 접근하여 박스의 top이 뷰포트 20%지점에 도달하면 크기, 원근감, 밝기가 변하도록 설정
+
+<br><br><br>
+
+### 5. 마우스 오버 시 관련 이미지 나타나기
+
+<img width="700" alt="image" src="https://github.com/user-attachments/assets/594bdbfc-30a1-475a-8d43-224963881d3e" />
+
+[ HTML ]
+```html
+  <ul class="listBox">
+    <li>
+      <p>Deabang</p>
+      <span>Undustry</span>
+      <span>2024</span>
+    </li>
+    <li>
+      . . .
+    </li>
+    <li>
+      . . .
+    </li>
+    <li>
+      . . .
+    </li>
+    <li>
+      . . .
+    </li>
+    <li>
+      . . .
+    </li>
+    <li>
+      . . .
+    </li>
+  </ul>
+  <div class="imgBox box">
+    <img src="images/img0.jpg" alt="">
+  </div>
+```
+
+[ CSS ]
+```css
+.con5 .imgBox{
+  width: 350px;
+  transform: scale(0);
+  opacity: 0;
+  position: absolute;
+  z-index: 1000;
+}
+.con5 .imgBox img{
+  width: 100%;
+}
+```
+
+[ JS ]
+```js
+  //con5 imgBox
+  let listItems = document.querySelectorAll('.con5 .listBox li');
+  let imgBox = document.querySelector('.con5 .imgBox');
+  let img = imgBox.querySelector('img');
+
+  for(let i=0; i<listItems.length; i++){
+    //이미지 나타나기
+    listItems[i].addEventListener('mouseover', ()=>{
+      img.src = `images/img${i}.jpg`;
+      gsap.set(imgBox, {opacity: 0, transform: 'scale(0)'}),
+      gsap.to(imgBox, {opacity: 1, transform: 'scale(1)', duration: 0.3})
+    })
+    //이미지 이동
+    listItems[i].addEventListener('mousemove', (e)=>{
+      let imgBoxX = e.pageX + 20;
+      let imgBoxY = e.pageY + 20;
+      imgBox.style.left = imgBoxX + 'px';
+      imgBox.style.top = imgBoxY + 'px';
+    })
+    //이미지 사라지기
+    listItems[i].addEventListener('mouseout', ()=>{
+      gsap.to(imgBox, {scale: 0, opacity: 0, duration: 0.3})
+    })
+  }
+```
+<br>
+
+1️⃣ &nbsp; imgBox를 따로 마크업해서 position absolute로 띄워준다 <br><br>
+2️⃣ &nbsp; 이미지 저장명을 리스트 인덱스와 연관시켜 mouseover되면 동적으로 업데이트되도록 하고, <br>
+&nbsp;&nbsp; set(), to() 메서드로 imgBox가 나타나는 애니메이션을 설정한다<br><br>
+3️⃣ &nbsp; 마우스가 움직이면 이미지가 따라오도록 현재 마우스 위치를 이용해서 imgBox의 left, top 값을 설정한다 <br>
+❗️&nbsp;  pageX/Y는 스크롤을 포함한 문서 전체를 기준으로 한 위치<br><br>
+5️⃣ &nbsp; mouseout일때는 다시 imgBox가 사라지는 애니메이션을 설정한다<br><br>
 
 
 
