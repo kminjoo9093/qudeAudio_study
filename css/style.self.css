@@ -1,4 +1,4 @@
-/* 00. font - 구글폰트에서 Montserrat 300/400/600 가져옴 */
+/* 00. font - 구글폰트 Montserrat 300/400/600  */
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600&family=Noto+Sans+KR&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300;500;600&display=swap");
 
@@ -11,6 +11,7 @@ address, em, i {font-style: normal;}
 button {background: none; border: none;}
 img {vertical-align: middle;}
 i{display: block;}
+
 /* =============== BASE ============== */
 body{
   font-family: "Raleway", sans-serif;
@@ -53,7 +54,7 @@ section{
 .title i{
   display: block;
 }
-/* =============== header =============== */
+/* =============== HEADER =============== */
 header{
   position: fixed;
   top: 0;
@@ -183,7 +184,7 @@ footer .logoWrap{
     }
   }
 }
-/* =============== con1 ============== */
+/* =============== CON1 ============== */
 .con1 .box{
   background-color: rgba(55, 55, 55, 0.4);
   padding: 50px;
@@ -221,13 +222,8 @@ footer .logoWrap{
   animation: circle 2s infinite;
 }
 @keyframes circle{
-  0%{
-    opacity: 0;
-  }
+  0%, 100% {opacity: 0;}
   30%, 80% {opacity: 1;}
-  100%{
-    opacity: 0;
-  }
 }
 .textAni ul{
   display: grid;
@@ -241,7 +237,7 @@ footer .logoWrap{
   transform: translateX(30px);
   opacity: 0;
 }
-/* =============== con2 ============== */
+/* =============== CON2 ============== */
 .con2 .mainTextBox{
   border-top: 1px solid #3b3b3b;
   padding: 50px 0;
@@ -293,21 +289,21 @@ footer .logoWrap{
   }
 }
 
-/* =============== con3 ============== */
+/* =============== CON3 ============== */
 .con3 .inner{
   display: flex;
   justify-content: space-between;
 }
 .con3 .textBox{
   width: 30%;
-  & h3{
-    font-size: 60px;
-    font-weight: normal;
-    line-height: 1;
-    position: sticky;
-    position: -webkit-sticky;
-    top: 50%;
-  }
+}
+.con3 .textBox h3{
+  font-size: 60px;
+  font-weight: normal;
+  line-height: 1;
+  position: sticky;
+  position: -webkit-sticky;
+  top: 50%;
 }
 .con3 .listBox{
   width: 70%;
@@ -353,7 +349,7 @@ footer .logoWrap{
     opacity: 0.5;
   }
 }
-/* =============== con4 ============== */
+/* =============== CON4 ============== */
 .con4 .mainTextBox{
   position: relative;
 }
@@ -386,7 +382,6 @@ footer .logoWrap{
   position: -webkit-sticky;
   top: 10%;
   filter: brightness(1);
-  /* transition: 0.5s; 트랜지션때문에 효과적용 안되는거처럼 보임 */
   & .mainText{
     font-size: 40px;
     font-weight: normal;
@@ -432,7 +427,7 @@ footer .logoWrap{
   grid-column-start: 2;
   margin-bottom: 30px;
 }
-/* =============== con5 ============== */
+/* =============== CON5 ============== */
 .con5{
   background-color: #fff;
   color: #000;
@@ -473,7 +468,7 @@ footer .logoWrap{
 .con5 .imgBox img{
   width: 100%;
 }
-/* =============== footer ============== */
+/* =============== FOOTER ============== */
 footer{
   position: relative;
   overflow: hidden;
@@ -560,7 +555,7 @@ footer .logoWrap{
   left: 0;
 }
 
-/* ============= loading ============= */
+/* ============= LOADING ============= */
 .loading{
   width: 100%;
   height: 100vh;

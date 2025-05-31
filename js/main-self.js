@@ -13,7 +13,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
       start: '100% 100%',
       end: '100% 0%',
       scrub: 1,
-      // markers: true
     }
   })
   .to('.logoWrap #j', {x:-30, y:200, rotate:20, ease:'none', duration:5}, 0)
@@ -22,45 +21,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
   .to('.logoWrap #u', {x:30, y:300, rotate:20, ease:'none', duration:5}, 0)
   .to('.logoWrap #n', {x:-30, y:230, rotate:-10, ease:'none', duration:5}, 0)
   .to('.logoWrap #g', {x:-10, y:200, rotate:-30, ease:'none', duration:5}, 0)
-
-  //footer logoWrap
-  gsap.timeline({
-    scrollTrigger:{
-      trigger: 'footer',
-      start: '0 100%',
-      end: '100% 0',
-      scrub: 1
-    }
-  })
-  .to('.logoWrap', {top:'20%', ease:"none", duration:5}, 0)
-
-  //공통 subText 
-  gsap.utils.toArray('.subText').forEach((selector)=>{
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: selector,
-        start: '100% 100%',
-        end: '100% 100%',
-        scrub: 1,
-        // markers: true
-      }
-    })
-    .fromTo(selector, {y: 100, opacity: 0}, {y: 0, opacity: 1, duration: 5, ease:'none'})
-  })
-
-  //공통 title > i
-  gsap.utils.toArray(".mainTextBox .title i").forEach((selector)=>{
-    gsap.timeline({
-      scrollTrigger: {
-        trigger: selector,
-        start: '100% 100%',
-        end: '100% 100%',
-        scrub: 1,
-        // markers: true
-      }
-    })
-    .fromTo(selector, {y: 150} ,{y: 0, duration: 10, ease: "none"}, 0)
-  })
 
   //con1 textAni
   const textAniItems = document.querySelectorAll('.textAni ul li');
@@ -78,13 +38,38 @@ document.addEventListener("DOMContentLoaded", (event) => {
     })
   }
 
+  //공통 subText 
+  gsap.utils.toArray('.subText').forEach((selector)=>{
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: selector,
+        start: '100% 100%',
+        end: '100% 100%',
+        scrub: 1,
+      }
+    })
+    .fromTo(selector, {y: 100, opacity: 0}, {y: 0, opacity: 1, duration: 5, ease:'none'})
+  })
+
+  //공통 title > i
+  gsap.utils.toArray(".mainTextBox .title i").forEach((selector)=>{
+    gsap.timeline({
+      scrollTrigger: {
+        trigger: selector,
+        start: '100% 100%',
+        end: '100% 100%',
+        scrub: 1,
+      }
+    })
+    .fromTo(selector, {y: 150} ,{y: 0, duration: 10, ease: "none"}, 0)
+  })
+
   //con3 listBox
   gsap.utils.toArray('.con3 .listBox li').forEach((selector, idx)=>{
     gsap.timeline({
       scrollTrigger: {
         trigger : selector,
         start: '30% 50%',
-        // markers: true,
         onEnter: ()=>{
           gsap.set(selector, {
             opacity: 0,
@@ -110,7 +95,6 @@ document.addEventListener("DOMContentLoaded", (event) => {
         start: '0% 20%',
         end: '0% 0%',
         scrub: 1,
-        // markers: true
       }
     })
     .to(selector, {
@@ -141,6 +125,17 @@ document.addEventListener("DOMContentLoaded", (event) => {
       gsap.to(imgBox, {scale: 0, opacity: 0, duration: 0.3})
     })
   }
+
+    //footer logoWrap
+  gsap.timeline({
+    scrollTrigger:{
+      trigger: 'footer',
+      start: '0 100%',
+      end: '100% 0',
+      scrub: 1
+    }
+  })
+  .to('.logoWrap', {top:'20%', ease:"none", duration:5}, 0)
 
   //loading animation
   const loading = document.querySelector('.loading');
