@@ -4,7 +4,7 @@
 - J.Young 강의를 통해 GSAP의 기본 개념과 활용법을 학습한 후 재구현
 
 <br><br>
-link: 
+link: https://kminjoo9093.github.io/qudeAudio_study/
 <br><br>
 <img width="700" alt="image" src="https://github.com/user-attachments/assets/ea561204-c4c6-48f2-8ed4-bc4952da7cb0" />
 <br><br>
