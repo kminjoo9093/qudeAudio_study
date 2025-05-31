@@ -102,9 +102,8 @@ gsap.timeline({
 <br>
 
 1️⃣ &nbsp; 각 텍스트 요소 모두 grid-column-start, grid-row-start 값을 1로 주어 같은 위치에 위치시키고, opacity 0으로 보이지 않도록 설정한다 <br><br>
-2️⃣ &nbsp; 무한반복하는 타임라인을 textAni 변수에 할당한다<br>
-❗️ &nbsp; repeat: '최초 실행(1회) 이후' 반복되어야 하는 횟수를 지정<br>
-&nbsp;&nbsp; 값은 정수여야 하고, -1이면 무한반복<br><br>
+2️⃣ &nbsp; 무한 반복하는 타임라인을 textAni 변수에 할당한다<br>
+❗️ &nbsp; repeat: '최초 실행(1회) 이후' 반복되어야 하는 횟수를 지정하는 속성. 값은 정수여야 하고, -1이면 무한반복<br><br>
 3️⃣ &nbsp; 반복문으로 각 텍스트 요소가 차례로 나타나도록 애니메이션을 설정한다<br><br>
 4️⃣ &nbsp; yoyo 속성을 true로, 반복 횟수를 지정하는 repeat을 1로 설정한다<br>
 ❗️ &nbsp; yoyo : 반복 시 되돌아가는 동작 실행을 설정 <br>
@@ -280,15 +279,16 @@ gsap.timeline({
 2️⃣ &nbsp; 이미지 저장명을 리스트 인덱스와 연관시켜 mouseover되면 동적으로 업데이트되도록 하고, <br>
 &nbsp;&nbsp; set(), to() 메서드로 imgBox가 나타나는 애니메이션을 설정한다<br><br>
 3️⃣ &nbsp; 마우스가 움직이면 이미지가 따라오도록 현재 마우스 위치를 이용해서 imgBox의 left, top 값을 설정한다 <br>
-❗️&nbsp;  pageX/Y는 스크롤을 포함한 문서 전체를 기준으로 한 위치<br><br>
+❗️&nbsp;  pageX/Y는 스크롤을 포함한 문서 전체를 기준으로 한 마우스의 위치<br><br>
 5️⃣ &nbsp; mouseout일때는 다시 imgBox가 사라지는 애니메이션을 설정한다<br><br>
 
 <br><br><br>
 
 ## 📌 &nbsp; 회고 및 배운 점 정리
 
-1️⃣     타임라인
-2️⃣    유틸리티 함수로 gsap을 좀 더 폭넓게 사용할 수 있다는 점
-3️⃣    grid-column-start, grid-row-start 활용으로 같은 지점에 위치 시키기, 
-마우스 위치 관련 속성 pageX/Y로 다른 요소 위치 부여하기
+1️⃣    타임라인으로 애니메이션의 흐름을 체계적으로 구성하고 정밀하게 제어하기<br><br>
+2️⃣    유틸리티 함수로 gsap을 좀 더 폭넓게 사용하기 <br><br>
+3️⃣    grid-column-start, grid-row-start 활용으로 같은 지점에 위치 시키기<br><br>
+4️⃣    마우스 위치 관련 속성 pageX/Y로 다른 요소 위치 부여하기<br><br>
+❗️    더 다양한 효과 구현을 위해 gsap메서드, 콜백함수활용 등에 대한 더욱 많은 학습이 필요함을 느꼈다<br><br>
 
